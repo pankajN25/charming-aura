@@ -5,7 +5,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowRight, Check, Salad, Scale, Heart, Sparkles, Apple, Dumbbell } from "lucide-react"
+import { ArrowRight, CalendarDays, Check, Salad, Scale, Heart, Sparkles, Apple, Dumbbell, TrendingUp } from "lucide-react"
 import { CTASection } from "@/components/sections/cta"
 
 const services = [
@@ -14,6 +14,7 @@ const services = [
     title: "Personalized Diet Plans",
     description: "Custom nutrition plans tailored to your unique body type, lifestyle, health goals, and food preferences. Our plans are designed for sustainability and long-term success.",
     image: "/images/diet-plan.jpg",
+    href: "/services",
     features: [
       "Comprehensive health assessment",
       "Customized meal plans",
@@ -24,9 +25,10 @@ const services = [
   },
   {
     icon: Scale,
-    title: "Weight Management",
+    title: "Weight Loss Program",
     description: "Achieve and maintain your ideal weight with science-backed strategies. Whether you want to lose weight, gain muscle, or maintain a healthy weight, we have solutions for you.",
     image: "/images/weight-management.jpg",
+    href: "/services/weight-loss",
     features: [
       "Body composition analysis",
       "Calorie and macro planning",
@@ -36,10 +38,25 @@ const services = [
     ],
   },
   {
+    icon: TrendingUp,
+    title: "Weight Gain Program",
+    description: "Gain healthy weight with personalized calorie planning, protein guidance, appetite support, and sustainable food routines.",
+    image: "/images/diet-plan.jpg",
+    href: "/services/weight-gain",
+    features: [
+      "Healthy calorie surplus planning",
+      "Protein and meal timing guidance",
+      "Gut-friendly food structure",
+      "Strength and movement support",
+      "Regular progress adjustments",
+    ],
+  },
+  {
     icon: Heart,
     title: "Wellness Coaching",
     description: "Holistic guidance that addresses mind, body, and spirit. Our wellness coaching goes beyond diet to encompass all aspects of your health and well-being.",
     image: "/images/wellness-coaching.jpg",
+    href: "/services",
     features: [
       "Stress management",
       "Sleep optimization",
@@ -52,7 +69,8 @@ const services = [
     icon: Sparkles,
     title: "Lifestyle Modification",
     description: "Transform your daily habits with sustainable lifestyle changes. We help you build healthy routines that fit seamlessly into your busy life.",
-    image: "/images/nutrition-consultation.jpg",
+    image: "/images/wellness-coaching.jpg",
+    href: "/services",
     features: [
       "Habit formation coaching",
       "Time management for health",
@@ -66,6 +84,7 @@ const services = [
     title: "Disease Management",
     description: "Specialized nutrition plans for managing chronic conditions like diabetes, hypertension, thyroid disorders, and PCOS through dietary intervention.",
     image: "/images/diet-plan.jpg",
+    href: "/services/pcod-management",
     features: [
       "Condition-specific plans",
       "Blood sugar management",
@@ -78,13 +97,28 @@ const services = [
     icon: Dumbbell,
     title: "Sports Nutrition",
     description: "Optimize your athletic performance with tailored nutrition strategies. Perfect for athletes, fitness enthusiasts, and anyone with active lifestyle goals.",
-    image: "/images/sports-nutrition.jpg",
+    image: "/images/weight-management.jpg",
+    href: "/services",
     features: [
       "Performance optimization",
       "Pre/post workout nutrition",
       "Supplement guidance",
       "Recovery nutrition",
       "Competition preparation",
+    ],
+  },
+  {
+    icon: CalendarDays,
+    title: "21-Day Wellness Challenge",
+    description: "A structured three-week reset with detox guidance, liquid day support, Zoom coaching, and follow-ups.",
+    image: "/images/wellness-coaching.jpg",
+    href: "/programs/21-day-challenge",
+    features: [
+      "Week-by-week program structure",
+      "Detox and liquid day guidance",
+      "Personalized diet plan",
+      "Zoom support",
+      "Progress follow-ups",
     ],
   },
 ]
@@ -181,9 +215,11 @@ export default function ServicesPage() {
 
                       {/* Content */}
                       <div className="p-6 md:p-8">
-                        <h3 className="font-serif text-xl font-bold text-foreground mb-3">
-                          {service.title}
-                        </h3>
+                        <Link href={service.href} className="inline-block">
+                          <h3 className="font-serif text-xl font-bold text-foreground mb-3 hover:text-primary transition-colors">
+                            {service.title}
+                          </h3>
+                        </Link>
                         <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                           {service.description}
                         </p>
@@ -195,6 +231,13 @@ export default function ServicesPage() {
                             </li>
                           ))}
                         </ul>
+                        <Link
+                          href={service.href}
+                          className="inline-flex items-center gap-2 text-sm font-semibold text-primary mt-5 hover:gap-3 transition-all"
+                        >
+                          Learn more
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
                       </div>
                     </div>
                   </CardContent>

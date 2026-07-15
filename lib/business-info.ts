@@ -19,21 +19,25 @@ export const businessInfo = {
   postalCode: '411033',
   country: 'IN',
   mapUrl:
-    "https://www.google.com/maps/search/?api=1&query=Office%20No.%203%2C%20Akshay%20Center%2C%20Aundh%20Ravet%20BRTS%20Rd%2C%20Thergaon%2C%20Pimpri-Chinchwad%2C%20Maharashtra%20411033",
+    "https://www.google.com/maps/place/Charming+Aura+Wellness+%7C+Weight+Loss+%26+Nutrition+Center+Pune/@18.6091582,73.7700757,18z",
   mapEmbedUrl:
-    "https://www.google.com/maps?q=Office%20No.%203%2C%20Akshay%20Center%2C%20Aundh%20Ravet%20BRTS%20Rd%2C%20Thergaon%2C%20Pimpri-Chinchwad%2C%20Maharashtra%20411033&output=embed",
+    "https://maps.google.com/maps?q=18.6091582,73.7700757&z=18&output=embed",
   shortPromise:
     'Personalized nutrition and wellness coaching built around your body type, health goals, habits, and lifestyle.',
   about:
     'At Charming Aura Wellness & Nutrition, we create sustainable health journeys through personalized diet plans, mindset coaching, regular follow-ups, and habit transformation.',
   services: [
     'Personalized Diet & Nutrition Plans',
-    'Weight Management',
+    'Weight Management (Loss & Gain)',
+    'Weight Gain Program',
+    'Live Zoom Coaching Sessions (3x Daily)',
+    'Guided Exercise & Movement Programs',
     'Health and Wellness Coaching',
     'Motivational Coaching',
     'Regular Follow-ups',
     'Habit & Lifestyle Transformation',
     '21-Day Wellness Challenge',
+    'Herbal Nutrition Guidance',
   ],
   social: {
     facebook: 'https://www.facebook.com/charmingaurawellnesscenter',

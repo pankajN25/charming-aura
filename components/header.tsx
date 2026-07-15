@@ -12,6 +12,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/contact", label: "Contact" },
 ]
 
@@ -33,8 +34,8 @@ export function Header() {
               <span className="hidden sm:inline">{businessInfo.email}</span>
             </a>
           </div>
-          <div className="text-xs sm:text-sm">
-            Your Health, Our Commitment
+          <div className="text-xs sm:text-sm font-medium animate-pulse">
+            ✦ FREE Initial Consultation — No Hidden Fees, No Commitment
           </div>
         </div>
       </div>
@@ -76,7 +77,7 @@ export function Header() {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              <Link href="/contact">Book Consultation</Link>
+              <Link href="/contact">Book FREE Consultation</Link>
             </Button>
           </div>
 
@@ -112,7 +113,7 @@ export function Header() {
                 </Link>
               ))}
               <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground mt-4">
-                <Link href="/contact" onClick={() => setIsOpen(false)}>Book Consultation</Link>
+                <Link href="/contact" onClick={() => setIsOpen(false)}>Book FREE Consultation</Link>
               </Button>
             </div>
           </motion.div>

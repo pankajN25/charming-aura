@@ -1,101 +1,179 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { ArrowRight, TrendingDown, Zap, Target } from 'lucide-react'
+import { useState } from 'react'
+import Link from 'next/link'
+import { motion, AnimatePresence } from 'framer-motion'
+import { TrendingDown, TrendingUp, ArrowRight, X, Check } from 'lucide-react'
 
-const problems = [
-  {
+const journeys = {
+  loss: {
+    label: 'Lose Weight',
     icon: TrendingDown,
-    problem: "Weight won't budge despite dieting",
-    solution: 'Personalized plans that work with your metabolism',
+    intro: "Stuck despite dieting? You're not alone. Here's exactly what we fix.",
+    problems: [
+      "Weight won't budge despite months of dieting",
+      "Constant fatigue and low energy all day",
+      "PCOD, diabetes, or cravings keep derailing progress",
+    ],
+    solutions: [
+      "Personalised plan built around your metabolism, not a template",
+      "Nutrient-dense Indian meals that sustain your energy all day",
+      "Condition-aware protocols with monthly follow-ups & adjustments",
+    ],
+    href: '/services/weight-loss',
+    cta: 'See Weight Loss Program',
   },
-  {
-    icon: Zap,
-    problem: 'No energy or constant fatigue',
-    solution: 'Nutrient-dense nutrition balanced for your needs',
+  gain: {
+    label: 'Gain Weight',
+    icon: TrendingUp,
+    intro: "Eating more but not gaining? The problem isn't effort — it's the plan.",
+    problems: [
+      "Eating more food but still not gaining healthy weight",
+      "Low appetite, poor digestion, or skipping meals",
+      "Gaining fat from junk food instead of lean muscle",
+    ],
+    solutions: [
+      "Calorie-smart Indian meals with the right protein & macro split",
+      "Meal timing, gut-friendly foods, and easy calorie add-ons",
+      "Lean weight gain plan with nutrition + movement guidance",
+    ],
+    href: '/services/weight-gain',
+    cta: 'See Weight Gain Program',
   },
-  {
-    icon: Target,
-    problem: 'PCOD, diabetes affecting quality of life',
-    solution: 'Specialized nutrition protocols for health management',
-  },
-]
+}
+
+type JourneyKey = keyof typeof journeys
 
 export function ProblemSolutionSection() {
+  const [active, setActive] = useState<JourneyKey>('loss')
+  const journey = journeys[active]
+
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4 max-w-5xl">
-        <div className="text-center mb-12">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
-            Your Health Challenges, Our Proven Solutions
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            We understand the frustration. Most generic diet plans fail because they ignore YOUR unique body and
-            lifestyle.
-          </p>
-        </div>
 
-        <div className="space-y-8">
-          {problems.map((item, index) => {
-            const Icon = item.icon
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                className="grid md:grid-cols-2 gap-8 items-center"
-              >
-                {/* Problem Side */}
-                <div className="bg-destructive/5 border border-destructive/20 rounded-lg p-6">
-                  <div className="flex items-start gap-4">
-                    <Icon className="w-6 h-6 text-destructive flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-foreground text-lg">The Problem</h3>
-                      <p className="text-muted-foreground mt-2">{item.problem}</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Arrow */}
-                <div className="flex justify-center md:justify-end">
-                  <ArrowRight className="w-6 h-6 text-primary hidden md:block" />
-                </div>
-
-                {/* Solution Side */}
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2 + 0.1 }}
-                  className="bg-primary/5 border border-primary/20 rounded-lg p-6 md:col-start-2"
-                >
-                  <div className="flex items-start gap-4">
-                    <Zap className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-foreground text-lg">Our Solution</h3>
-                      <p className="text-muted-foreground mt-2">{item.solution}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              </motion.div>
-            )
-          })}
-        </div>
-
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-12 text-center"
+          className="text-center mb-10"
         >
-          <a
-            href="/contact"
-            className="inline-block px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-semibold"
+          <span className="text-primary font-semibold text-sm uppercase tracking-widest">Your Goal</span>
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mt-3 mb-4">
+            Your Challenges, Our Proven Solutions
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Tell us your goal — we'll show exactly how we solve it.
+          </p>
+        </motion.div>
+
+        {/* Toggle pills */}
+        <div className="flex justify-center mb-8">
+          <div className="inline-flex p-1.5 bg-muted rounded-xl gap-1">
+            {(Object.keys(journeys) as JourneyKey[]).map((key) => {
+              const J = journeys[key]
+              const Icon = J.icon
+              return (
+                <button
+                  key={key}
+                  type="button"
+                  onClick={() => setActive(key)}
+                  className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 ${
+                    active === key
+                      ? 'bg-primary text-primary-foreground shadow-md'
+                      : 'text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  <Icon className="w-4 h-4" />
+                  I Want to {J.label}
+                </button>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* Intro line */}
+        <AnimatePresence mode="wait">
+          <motion.p
+            key={`${active}-intro`}
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.2 }}
+            className="text-center text-foreground font-semibold text-base md:text-lg mb-8"
           >
-            Schedule Your Free Consultation
-          </a>
+            {journey.intro}
+          </motion.p>
+        </AnimatePresence>
+
+        {/* Two-column comparison */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={active}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.25 }}
+          >
+            {/* Column headers */}
+            <div className="grid grid-cols-2 gap-4 mb-3">
+              <div className="flex items-center gap-2 px-5">
+                <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0">
+                  <X className="w-3.5 h-3.5 text-red-500" />
+                </div>
+                <span className="text-sm font-bold text-red-600 uppercase tracking-wide">The Problem</span>
+              </div>
+              <div className="flex items-center gap-2 px-5">
+                <div className="w-6 h-6 rounded-full bg-primary/15 flex items-center justify-center flex-shrink-0">
+                  <Check className="w-3.5 h-3.5 text-primary" />
+                </div>
+                <span className="text-sm font-bold text-primary uppercase tracking-wide">Our Solution</span>
+              </div>
+            </div>
+
+            {/* Rows */}
+            <div className="space-y-3">
+              {journey.problems.map((problem, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.08 }}
+                  className="grid grid-cols-2 gap-4"
+                >
+                  {/* Problem */}
+                  <div className="flex items-start gap-3 bg-red-50 border border-red-100 rounded-xl px-5 py-4">
+                    <X className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" />
+                    <p className="text-foreground text-sm font-medium leading-snug">{problem}</p>
+                  </div>
+
+                  {/* Solution */}
+                  <div className="flex items-start gap-3 bg-primary/5 border border-primary/15 rounded-xl px-5 py-4">
+                    <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                    <p className="text-foreground text-sm font-medium leading-snug">{journey.solutions[i]}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="mt-8 text-center"
+        >
+          <Link
+            href={journey.href}
+            className="inline-flex items-center gap-2 px-7 py-3.5 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 transition-colors font-semibold group"
+          >
+            {journey.cta}
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
         </motion.div>
       </div>
     </section>

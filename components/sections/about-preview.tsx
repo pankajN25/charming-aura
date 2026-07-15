@@ -3,107 +3,125 @@
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Award, Users, Clock, Target } from "lucide-react"
+import { ArrowRight, MapPin, Video, Leaf, Users } from "lucide-react"
 import { businessInfo } from "@/lib/business-info"
 
-const stats = [
-  { icon: Users, value: businessInfo.transformedClients, label: "Transformed Lives" },
-  { icon: Award, value: "15+", label: "Years Excellence" },
-  { icon: Clock, value: "100%", label: "Personalized Plans" },
-  { icon: Target, value: "95%", label: "Client Satisfaction" },
+const pillars = [
+  { icon: Leaf, label: "Herbal Nutrition", desc: "Nature-backed protocols for metabolism, gut health, and hormonal balance." },
+  { icon: Video, label: "Live Zoom Coaching", desc: "3 group sessions every day — morning, afternoon, and evening." },
+  { icon: MapPin, label: "Physical Centre", desc: "In-person consultations at our Thergaon, Pimpri-Chinchwad centre." },
+  { icon: Users, label: "Global Reach", desc: "Serving clients across India, the US, and Europe via online coaching." },
 ]
 
 export function AboutPreviewSection() {
   return (
-    <section className="py-24 bg-background">
+    <section className="py-20 md:py-28 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Image Side */}
+        <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+
+          {/* Image side */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.7 }}
             className="relative"
           >
+            {/* Decorative frame */}
+            <div className="absolute -top-5 -left-5 w-full h-full rounded-3xl border-2 border-primary/15" />
+
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
               <Image
                 src="/images/nutritionist.jpg"
-                alt="Our Wellness Expert"
+                alt="Charming Aura Wellness expert"
                 fill
                 className="object-cover"
               />
-            </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent" />
 
-            {/* Experience Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="absolute -bottom-8 -right-8 bg-primary text-primary-foreground p-6 rounded-2xl shadow-xl"
-            >
-              <div className="text-center">
-                <span className="text-4xl font-bold">15+</span>
-                <p className="text-sm mt-1 opacity-90">Years Excellence</p>
+              {/* Badge overlay */}
+              <div className="absolute bottom-6 left-6 right-6 bg-card/95 backdrop-blur-sm rounded-2xl p-4 border border-border shadow-lg">
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center text-primary-foreground font-bold text-xl flex-shrink-0">
+                    15+
+                  </div>
+                  <div>
+                    <p className="font-bold text-foreground">Years of Excellence</p>
+                    <p className="text-sm text-muted-foreground">Transforming lives since 2009</p>
+                    <p className="text-xs text-primary font-semibold mt-0.5">Thergaon, Pimpri-Chinchwad</p>
+                  </div>
+                </div>
               </div>
-            </motion.div>
-
-            {/* Decorative Element */}
-            <div className="absolute -top-6 -left-6 w-24 h-24 border-4 border-primary/20 rounded-3xl" />
+            </div>
           </motion.div>
 
-          {/* Content Side */}
+          {/* Content side */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-8"
+            transition={{ duration: 0.7 }}
+            className="space-y-7"
           >
             <div>
-              <span className="text-primary font-medium text-sm uppercase tracking-wider">About Us</span>
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6 text-balance">
-                Transforming Lives Through Personalized Wellness
+              <span className="text-primary font-semibold text-sm uppercase tracking-widest">About Charming Aura</span>
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 mb-5 text-balance">
+                Wellness From The Inside Out
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                At Charming Aura Wellness, we combine science-based nutrition with holistic wellness coaching. Our certified professionals create personalized plans tailored to your body, lifestyle, and goals for sustainable, lasting transformation.
+                At Charming Aura Wellness, we believe real transformation begins with personalised guidance — not generic diets. Based in Thergaon, Pune, we combine certified nutrition science, herbal protocols, and daily live coaching to create sustainable health for every client.
               </p>
             </div>
 
-            <p className="text-muted-foreground leading-relaxed">
-              With 15+ years transforming lives, we&apos;ve perfected a holistic approach that goes beyond diet. We address nutrition, lifestyle modifications, mind-body connection, and sustainable habits that create lasting wellness for our clients.
-            </p>
+            {/* Quote */}
+            <blockquote className="border-l-4 border-primary pl-5 py-1">
+              <p className="text-foreground italic text-lg leading-relaxed">
+                "Our goal is simple: build a plan that works with your life, your body, and your culture — not against them."
+              </p>
+              <footer className="text-sm text-muted-foreground mt-2 font-medium">— Charming Aura Wellness Team</footer>
+            </blockquote>
 
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-6 py-8">
-              {stats.map((stat, index) => (
+            {/* 4 pillars */}
+            <div className="grid grid-cols-2 gap-4">
+              {pillars.map((p, i) => (
                 <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
+                  key={p.label}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex items-center gap-4"
+                  transition={{ delay: i * 0.1 }}
+                  className="bg-muted/40 rounded-xl p-4 border border-border hover:border-primary/30 hover:bg-primary/5 transition-colors"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                    <stat.icon className="w-6 h-6 text-primary" />
+                  <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-2.5">
+                    <p.icon className="w-4.5 h-4.5 text-primary" />
                   </div>
-                  <div>
-                    <span className="text-2xl font-bold text-foreground">{stat.value}</span>
-                    <p className="text-sm text-muted-foreground">{stat.label}</p>
-                  </div>
+                  <h3 className="font-semibold text-sm text-foreground mb-1">{p.label}</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{p.desc}</p>
                 </motion.div>
               ))}
             </div>
 
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground group">
-              <Link href="/about">
-                Learn More About Us
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
+            {/* Stats row */}
+            <div className="flex gap-8 py-3 border-t border-border">
+              {[
+                { value: businessInfo.transformedClients, label: "Clients Transformed" },
+                { value: "95%", label: "Satisfaction Rate" },
+                { value: "3+", label: "Countries Served" },
+              ].map((s) => (
+                <div key={s.label}>
+                  <div className="text-2xl font-bold text-primary">{s.value}</div>
+                  <div className="text-xs text-muted-foreground mt-0.5">{s.label}</div>
+                </div>
+              ))}
+            </div>
+
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-2 px-7 py-3.5 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 transition-colors font-semibold group"
+            >
+              Our Full Story
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </motion.div>
         </div>
       </div>

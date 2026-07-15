@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next'
+import { businessInfo } from '@/lib/business-info'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://charmingaurawellness.com'
+  const baseUrl = businessInfo.website
 
   const routes = [
     {
@@ -29,6 +30,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/privacy`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly' as const,
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/terms`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly' as const,
+      priority: 0.3,
+    },
+    {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
       changeFrequency: 'daily' as const,
@@ -42,25 +55,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/services/weight-management`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/services/weight-gain`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/services/pcod-management`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services/diabetes-nutrition`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/sports-nutrition`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/wellness-coaching`,
+      url: `${baseUrl}/programs/21-day-challenge`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.8,

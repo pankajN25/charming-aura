@@ -1,20 +1,24 @@
 "use client"
-
+// v2
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { InquiryForm } from "@/components/inquiry-form"
 import { BookingWidget } from "@/components/booking-widget"
 import { businessInfo } from "@/lib/business-info"
-import { 
-  Phone, 
-  Mail, 
-  MapPin, 
+import {
+  Phone,
+  Mail,
+  MapPin,
   Clock,
   Facebook,
   Instagram,
   Youtube,
   Calendar,
-  Globe2
+  Globe2,
+  Gift,
+  ShieldCheck,
+  Heart,
+  Sparkles,
 } from "lucide-react"
 
 const contactInfo = [
@@ -95,6 +99,79 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* FREE Consultation Banner */}
+      <section className="py-6 bg-primary">
+        <div className="max-w-7xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 text-primary-foreground text-center"
+          >
+            <div className="flex items-center gap-2">
+              <Gift className="w-5 h-5 shrink-0" />
+              <span className="text-lg font-bold tracking-wide">Your First Consultation is 100% FREE</span>
+            </div>
+            <span className="hidden sm:inline text-primary-foreground/50">—</span>
+            <span className="text-primary-foreground/90 text-sm">No hidden charges · No pressure · No commitment required</span>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Why Is It Free */}
+      <section className="py-16 bg-secondary/40">
+        <div className="max-w-5xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-10"
+          >
+            <span className="text-primary font-medium text-sm uppercase tracking-wider">Our Philosophy</span>
+            <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mt-3 mb-3">
+              Why Is the First Consultation Free?
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              We believe every person deserves to understand their health before spending a single rupee. The first session is about you — we listen, assess, and show you exactly how we can help.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="grid sm:grid-cols-3 gap-6"
+          >
+            {[
+              {
+                icon: Heart,
+                title: "Trust First",
+                desc: "We want you to feel confident in us before you invest. The free session lets you meet our team and see our approach first-hand.",
+              },
+              {
+                icon: ShieldCheck,
+                title: "No Pressure",
+                desc: "You'll never be pushed into a plan or package. We assess your goals honestly and recommend only what genuinely fits your needs.",
+              },
+              {
+                icon: Sparkles,
+                title: "Real Value",
+                desc: "In just the first session you'll receive a preliminary health assessment, goal setting, and a clear picture of your wellness path.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="bg-card rounded-2xl p-6 border border-border/50 flex flex-col items-center text-center gap-3 shadow-sm">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <item.icon className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-semibold text-foreground">{item.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4">
@@ -108,6 +185,11 @@ export default function ContactPage() {
             >
               <Card className="border-border/50 shadow-lg">
                 <CardContent className="p-8">
+                  <div className="mb-2">
+                    <span className="inline-flex items-center gap-1.5 bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                      <Gift className="w-3.5 h-3.5" /> 100% Free — No Charges
+                    </span>
+                  </div>
                   <InquiryForm
                     title="Book Your Free Consultation"
                     subtitle="Fill out the form below and our wellness team will contact you soon"
