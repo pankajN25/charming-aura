@@ -126,7 +126,7 @@ export default function AboutPage() {
             >
               <div className="relative w-full h-[250px] md:h-[350px] lg:h-[450px] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/mission.jpg"
+                  src="/images/our-story.jpg"
                   alt="Our Mission"
                   fill
                   className="object-cover"
