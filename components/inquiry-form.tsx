@@ -36,19 +36,28 @@ export function InquiryForm({ title = "Book Your Free Consultation", subtitle = 
     setIsLoading(true)
 
     try {
-      const response = await fetch('/api/inquiries', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          ...formData,
+          access_key: '4d1945b1-64d2-40bc-88fc-0ded3d893398',
+          subject: 'New Free Consultation Request — Charming Aura Wellness',
+          from_name: 'Charming Aura Website',
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          age: formData.age,
+          health_goal: formData.health_goal,
+          message: formData.message,
           source: 'contact-form',
           timestamp: new Date().toISOString(),
         }),
       })
 
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}))
-        throw new Error(errorData.error || 'Failed to submit form')
+      const data = await response.json().catch(() => ({}))
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.message || 'Failed to submit form')
       }
 
       setIsSubmitted(true)
