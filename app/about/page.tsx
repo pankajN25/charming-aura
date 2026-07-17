@@ -1,54 +1,70 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import Link from "next/link"
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { ArrowRight, Award, Users, Clock, Target, Heart, Sparkles, Leaf } from "lucide-react"
-import { CTASection } from "@/components/sections/cta"
-import { TeamCredentialsSection } from "@/components/sections/team-credentials"
-import { businessInfo } from "@/lib/business-info"
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  ArrowRight,
+  Award,
+  Users,
+  Clock,
+  Target,
+  Heart,
+  Sparkles,
+  Leaf,
+} from "lucide-react";
+import { CTASection } from "@/components/sections/cta";
+import { TeamCredentialsSection } from "@/components/sections/team-credentials";
+import { businessInfo } from "@/lib/business-info";
 
 const stats = [
-  { value: businessInfo.transformedClients, label: "Transformed Lives", icon: Users },
+  {
+    value: businessInfo.transformedClients,
+    label: "Transformed Lives",
+    icon: Users,
+  },
   { value: "15+", label: "Years Excellence", icon: Award },
   { value: "95%", label: "Satisfaction Rate", icon: Target },
   { value: "100%", label: "Personalized", icon: Clock },
-]
+];
 
 const values = [
   {
     icon: Heart,
     title: "Compassion",
-    description: "We care deeply about your well-being and treat every client with empathy and understanding.",
+    description:
+      "We care deeply about your well-being and treat every client with empathy and understanding.",
   },
   {
     icon: Sparkles,
     title: "Excellence",
-    description: "We strive for the highest standards in nutrition science and wellness coaching.",
+    description:
+      "We strive for the highest standards in nutrition science and wellness coaching.",
   },
   {
     icon: Leaf,
     title: "Sustainability",
-    description: "We focus on lasting lifestyle changes, not quick fixes that don&apos;t stand the test of time.",
+    description:
+      "We focus on lasting lifestyle changes, not quick fixes that don&apos;t stand the test of time.",
   },
-]
+];
 
 const team = [
   {
-    name: "Dr. Priya Sharma",
+    name: "Punam Yadav",
     role: "Lead Nutritionist",
     image: "/images/team-member-1.jpg",
     bio: "With over 10 years of experience in clinical nutrition, Dr. Sharma specializes in personalized diet plans and metabolic health.",
   },
   {
-    name: "Rahul Verma",
+    name: "Manoj Yadav",
     role: "Wellness Coach",
     image: "/images/team-member-2.jpg",
     bio: "A certified wellness coach with expertise in lifestyle modification and holistic health approaches.",
   },
-]
+];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -56,12 +72,12 @@ const containerVariants = {
     opacity: 1,
     transition: { staggerChildren: 0.1 },
   },
-}
+};
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-}
+};
 
 export default function AboutPage() {
   return (
@@ -75,13 +91,23 @@ export default function AboutPage() {
             transition={{ duration: 0.5 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <span className="text-primary font-medium text-sm uppercase tracking-wider">About Us</span>
+            <span className="text-primary font-medium text-sm uppercase tracking-wider">
+              About Us
+            </span>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mt-4 mb-6 text-balance">
-              Excellence in Personalized Wellness Since 2009
+              About Charming Aura
+              <br />
+              <span className="text-primary">
+                Certified Dietitians in Thergaon
+              </span>
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              At Charming Aura Wellness, we believe that true health comes from a balanced approach 
-              to nutrition, mindfulness, and lifestyle. Discover our story and mission.
+              Welcome to Charming Aura Wellness, a leading diet and nutrition
+              clinic in Thergaon, PCMC. We specialize in personalized diet
+              plans, weight management, PCOD care, diabetes nutrition, thyroid
+              management, and holistic wellness. Since 2009, our mission has
+              been to empower individuals with practical, science-backed
+              nutrition solutions for a healthier and happier life.
             </p>
           </motion.div>
         </div>
@@ -98,10 +124,10 @@ export default function AboutPage() {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative w-full h-[250px] md:h-[350px] lg:h-[450px] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/mission.jpg"
-                  alt="Our Mission"
+                  src="/images/case-study-before-after.jpg"
+                  alt="Certified Dietitian Consultation"
                   fill
                   className="object-cover"
                 />
@@ -116,25 +142,37 @@ export default function AboutPage() {
               transition={{ duration: 0.6 }}
               className="space-y-6"
             >
-              <span className="text-primary font-medium text-sm uppercase tracking-wider">Our Story</span>
+              <span className="text-primary font-medium text-sm uppercase tracking-wider">
+                Our Story
+              </span>
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
-                A Decade of Transforming Lives
+                15+ Years of Personalized Nutrition Excellence
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Charming Aura Wellness was founded with a simple yet powerful vision: to help 
-                individuals achieve optimal health through personalized nutrition and holistic 
-                wellness approaches. What started as a small clinic has grown into a trusted 
-                wellness center serving hundreds of clients.
+                What began as a passion for promoting healthy living has grown
+                into a trusted wellness destination in Thergaon. At Charming
+                Aura Wellness, we believe every individual deserves a nutrition
+                plan tailored to their unique lifestyle, health conditions, and
+                wellness goals, ensuring lasting results rather than temporary
+                solutions.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Our journey began when our founder, Dr. Priya Sharma, witnessed the struggles 
-                many people face with fad diets and one-size-fits-all approaches. She knew 
-                there had to be a better way - one that respected individual differences and 
-                focused on sustainable, long-term health.
+                From the very beginning, our goal has been to provide
+                personalized nutrition solutions that are practical,
+                sustainable, and tailored to every individual's lifestyle. We
+                believe that no two people are alike, which is why every diet
+                plan is carefully designed to meet unique health goals and
+                medical requirements.
               </p>
+
               <p className="text-muted-foreground leading-relaxed">
-                Today, we continue that mission with an expanded team of certified professionals, 
-                each bringing unique expertise and a shared commitment to your wellness journey.
+                Today, Charming Aura Wellness is a trusted diet and nutrition
+                clinic serving Thergaon, Pimpri-Chinchwad, and nearby areas. Our
+                experienced nutrition experts specialize in weight management,
+                PCOD, thyroid care, diabetes management, gut health, sports
+                nutrition, and holistic wellness, helping clients achieve
+                healthier and happier lives through evidence-based nutrition
+                guidance.
               </p>
             </motion.div>
           </div>
@@ -160,7 +198,9 @@ export default function AboutPage() {
                 <div className="w-16 h-16 mx-auto rounded-2xl bg-primary-foreground/10 flex items-center justify-center mb-4">
                   <stat.icon className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <span className="text-4xl font-bold text-primary-foreground">{stat.value}</span>
+                <span className="text-4xl font-bold text-primary-foreground">
+                  {stat.value}
+                </span>
                 <p className="text-primary-foreground/70 mt-2">{stat.label}</p>
               </motion.div>
             ))}
@@ -183,11 +223,14 @@ export default function AboutPage() {
                   <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
                     <Target className="w-7 h-7 text-primary" />
                   </div>
-                  <h3 className="font-serif text-2xl font-bold text-foreground mb-4">Our Mission</h3>
+                  <h3 className="font-serif text-2xl font-bold text-foreground mb-4">
+                    Our Mission
+                  </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    To empower individuals to achieve their optimal health through personalized 
-                    nutrition plans, evidence-based wellness coaching, and sustainable lifestyle 
-                    modifications that create lasting positive change.
+                    To empower individuals to achieve their optimal health
+                    through personalized nutrition plans, evidence-based
+                    wellness coaching, and sustainable lifestyle modifications
+                    that create lasting positive change.
                   </p>
                 </CardContent>
               </Card>
@@ -204,11 +247,14 @@ export default function AboutPage() {
                   <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
                     <Sparkles className="w-7 h-7 text-primary" />
                   </div>
-                  <h3 className="font-serif text-2xl font-bold text-foreground mb-4">Our Vision</h3>
+                  <h3 className="font-serif text-2xl font-bold text-foreground mb-4">
+                    Our Vision
+                  </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    To be the leading wellness center that transforms lives through holistic 
-                    health solutions, making personalized nutrition accessible to everyone and 
-                    creating a healthier, happier community.
+                    To be the leading wellness center that transforms lives
+                    through holistic health solutions, making personalized
+                    nutrition accessible to everyone and creating a healthier,
+                    happier community.
                   </p>
                 </CardContent>
               </Card>
@@ -227,7 +273,9 @@ export default function AboutPage() {
             transition={{ duration: 0.5 }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <span className="text-primary font-medium text-sm uppercase tracking-wider">Our Values</span>
+            <span className="text-primary font-medium text-sm uppercase tracking-wider">
+              Our Values
+            </span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
               What We Stand For
             </h2>
@@ -271,12 +319,17 @@ export default function AboutPage() {
             transition={{ duration: 0.5 }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <span className="text-primary font-medium text-sm uppercase tracking-wider">Our Team</span>
+            <span className="text-primary font-medium text-sm uppercase tracking-wider">
+              Our Team
+            </span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
               Meet Our Experts
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Our team of certified professionals is dedicated to helping you achieve your health goals.
+              Our dedicated team combines scientific nutrition knowledge with
+              compassionate care to create personalized wellness plans that
+              empower every individual to live a healthier, happier, and more
+              balanced life.
             </p>
           </motion.div>
 
@@ -303,7 +356,9 @@ export default function AboutPage() {
                       <h3 className="font-serif text-xl font-semibold text-foreground">
                         {member.name}
                       </h3>
-                      <p className="text-primary font-medium text-sm mb-3">{member.role}</p>
+                      <p className="text-primary font-medium text-sm mb-3">
+                        {member.role}
+                      </p>
                       <p className="text-muted-foreground text-sm leading-relaxed">
                         {member.bio}
                       </p>
@@ -321,7 +376,11 @@ export default function AboutPage() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-center mt-12"
           >
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground group">
+            <Button
+              asChild
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground group"
+            >
               <Link href="/contact">
                 Schedule a Consultation
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -332,9 +391,9 @@ export default function AboutPage() {
       </section>
 
       <TeamCredentialsSection />
-      <CTASection/>
+      <CTASection />
 
       {/* <CTASection /> */}
     </>
-  )
+  );
 }
