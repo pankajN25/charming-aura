@@ -1,4 +1,12 @@
-import { businessSchema, localBusinessSchema, faqSchema, organisationSchema } from '@/lib/schema'
+import {
+  businessSchema,
+  localBusinessSchema,
+  faqSchema,
+  organisationSchema,
+  contactFaqSchema,
+  contactPageSchema,
+  breadcrumbSchema,
+} from '@/lib/schema'
 
 export function BusinessSchema() {
   return (
@@ -41,6 +49,32 @@ export function OrganisationSchema() {
         __html: JSON.stringify(organisationSchema),
       }}
     />
+  )
+}
+
+export function ContactPageSchema() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactFaqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema([
+              { name: 'Home', url: '/' },
+              { name: 'Contact', url: '/contact' },
+            ])
+          ),
+        }}
+      />
+    </>
   )
 }
 
