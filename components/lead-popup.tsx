@@ -39,18 +39,25 @@ export function LeadPopup() {
     setIsLoading(true)
 
     try {
-      // Send to form handler
-      const response = await fetch('/api/leads', {
+      // Send to Web3Forms
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          ...formData,
+          access_key: '4d1945b1-64d2-40bc-88fc-0ded3d893398',
+          subject: 'New Wellness Assessment Lead — Charming Aura Website',
+          from_name: 'Charming Aura Website',
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
           source: 'popup',
           timestamp: new Date().toISOString(),
         }),
       })
 
-      if (!response.ok) {
+      const data = await response.json().catch(() => ({}))
+
+      if (!response.ok || !data.success) {
         throw new Error('Failed to submit form')
       }
 
