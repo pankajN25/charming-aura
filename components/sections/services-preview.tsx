@@ -164,10 +164,10 @@ export function ServicesPreviewSection() {
         >
           <span className="text-primary font-semibold text-sm uppercase tracking-widest">Our Services</span>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 mb-5">
-            Comprehensive Wellness Solutions
+            Diet &amp; Nutrition Services in Pimpri-Chinchwad
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            From weight management and daily coaching to specialised conditions — every plan is built uniquely for you.
+            From weight loss and weight gain diet plans to PCOD, thyroid, diabetes and gut health — every personalized Indian diet chart is built uniquely for you.
           </p>
         </motion.div>
 

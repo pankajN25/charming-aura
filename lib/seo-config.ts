@@ -53,9 +53,20 @@ export const SEO_CONFIG = {
   },
   pages: {
     home: {
-      title: 'Charming Aura Wellness | Premium Nutrition & Wellness Coaching',
-      description: 'Transform your health with certified nutrition experts. Personalized diet plans, weight management, and holistic wellness coaching.',
-      keywords: ['nutrition coaching', 'wellness center', 'diet plans', 'health coaching'],
+      title: 'Best Dietitian in Thergaon, PCMC | Charming Aura Wellness',
+      description: 'Certified dietitian & nutritionist in Thergaon, Pimpri-Chinchwad. Personalized Indian diet charts for weight loss & weight gain. FREE first consultation.',
+      keywords: [
+        'dietitian in Thergaon',
+        'nutritionist in Thergaon',
+        'dietitian in Pimpri-Chinchwad',
+        'dietitian in PCMC',
+        'best dietitian near me Thergaon',
+        'weight loss dietitian Pimpri-Chinchwad',
+        'diet clinic in Thergaon',
+        'nutritionist in Wakad',
+        'online dietitian consultation India',
+        'free diet consultation Pune',
+      ],
     },
     about: {
       title: 'About Us | Charming Aura Wellness',
@@ -80,9 +91,18 @@ export const SEO_CONFIG = {
   },
 }
 
+const PAGE_PATHS: Record<keyof typeof SEO_CONFIG.pages, string> = {
+  home: '/',
+  about: '/about',
+  services: '/services',
+  contact: '/contact',
+  blog: '/blog',
+}
+
 export const generateMetadata = (page: keyof typeof SEO_CONFIG.pages) => {
   const pageConfig = SEO_CONFIG.pages[page]
   const siteConfig = SEO_CONFIG.site
+  const canonicalUrl = `${siteConfig.url}${PAGE_PATHS[page] === '/' ? '' : PAGE_PATHS[page]}`
 
   return {
     title: pageConfig.title,
@@ -90,9 +110,12 @@ export const generateMetadata = (page: keyof typeof SEO_CONFIG.pages) => {
     keywords: pageConfig.keywords.join(', '),
     authors: [{ name: 'Charming Aura Wellness' }],
     creator: 'Charming Aura Wellness',
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       type: 'website',
-      url: siteConfig.url,
+      url: canonicalUrl,
       title: pageConfig.title,
       description: pageConfig.description,
       siteName: siteConfig.name,
@@ -115,9 +138,13 @@ export const generateMetadata = (page: keyof typeof SEO_CONFIG.pages) => {
     robots: {
       index: true,
       follow: true,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-      'max-video-preview': -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large' as const,
+        'max-snippet': -1,
+        'max-video-preview': -1,
+      },
     },
   }
 }

@@ -50,12 +50,12 @@ export function HeroSection() {
             {/* Headline */}
             <div className="space-y-3">
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-foreground leading-[1.1] tracking-tight">
-                Your Journey to{" "}
-                <span className="text-primary">Complete</span>{" "}
-                Wellness Starts Here
+                Best Dietitian &amp; Nutritionist in{" "}
+                <span className="text-primary">Thergaon</span>,
+                Pimpri-Chinchwad
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
-                Expert nutrition coaching tailored to your body, lifestyle, and Indian food preferences — for lasting weight loss, healthy weight gain, and total wellbeing.
+                Your journey to complete wellness starts here. Expert nutrition coaching and personalized Indian diet charts tailored to your body, lifestyle, and food preferences — for lasting weight loss, healthy weight gain, and total wellbeing.
               </p>
             </div>
 
@@ -135,7 +135,7 @@ export function HeroSection() {
             <div className="relative w-full max-w-sm lg:max-w-md aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
               <Image
                 src="/images/hero-wellness.jpg"
-                alt="Wellness coaching at Charming Aura"
+                alt="Certified dietitian and nutritionist providing diet consultation at Charming Aura Wellness, Thergaon, Pimpri-Chinchwad"
                 fill
                 className="object-cover"
                 priority
