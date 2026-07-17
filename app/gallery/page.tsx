@@ -13,14 +13,14 @@ const photoCategories = ['All', 'Wellness Center', 'Client Journeys', 'Food & Nu
 const photos = [
   { src: '/images/nutritionist.jpg',          alt: 'Our certified nutritionist at the wellness center', category: 'Wellness Center', span: 'col-span-1 row-span-2' },
   { src: '/images/wellness-coaching.jpg',     alt: 'Wellness coaching session',                         category: 'Wellness Center', span: 'col-span-1' },
-  { src: '/images/happy-client.jpg',          alt: 'Happy client after transformation',                 category: 'Client Journeys', span: 'col-span-1' },
-  { src: '/images/diet-plan.jpg',             alt: 'Personalised Indian diet plan',                     category: 'Food & Nutrition', span: 'col-span-1' },
-  { src: '/images/weight-management.jpg',     alt: 'Weight management nutrition',                       category: 'Food & Nutrition', span: 'col-span-1' },
+  { src: '/images/happy-client.jpg',          alt: 'Weight loss transformation – client lost weight with a personalized Indian diet plan at Charming Aura Wellness, Thergaon',                 category: 'Client Journeys', span: 'col-span-1' },
+  { src: '/images/diet-plan.jpg',             alt: 'Personalized Indian diet chart for healthy weight loss',                     category: 'Food & Nutrition', span: 'col-span-1' },
+  { src: '/images/weight-management.jpg',     alt: 'Weight gain and weight loss nutrition consultation',                       category: 'Food & Nutrition', span: 'col-span-1' },
   { src: '/images/hero-wellness.jpg',         alt: 'Fresh healthy food for wellness',                   category: 'Food & Nutrition', span: 'col-span-2' },
-  { src: '/images/case-study-before-after.jpg', alt: 'Client transformation journey',                  category: 'Client Journeys', span: 'col-span-1 row-span-2' },
-  { src: '/images/wellness-coaching.jpg',     alt: 'Group coaching session',                            category: 'Exercise',         span: 'col-span-1' },
-  { src: '/images/nutritionist.jpg',          alt: 'One-on-one consultation',                           category: 'Wellness Center', span: 'col-span-1' },
-  { src: '/images/happy-client.jpg',          alt: 'Client success story',                              category: 'Client Journeys', span: 'col-span-1' },
+  { src: '/images/case-study-before-after.jpg', alt: 'Before and after weight loss transformation of a client from Pimpri-Chinchwad',                  category: 'Client Journeys', span: 'col-span-1 row-span-2' },
+  { src: '/images/wellness-coaching.jpg',     alt: 'Online diet consultation and coaching session',                            category: 'Exercise',         span: 'col-span-1' },
+  { src: '/images/nutritionist.jpg',          alt: 'Personalized diet consultation in Thergaon, Pimpri-Chinchwad',                           category: 'Wellness Center', span: 'col-span-1' },
+  { src: '/images/happy-client.jpg',          alt: 'Real client success story after following a personalized diet plan',                              category: 'Client Journeys', span: 'col-span-1' },
   { src: '/images/diet-plan.jpg',             alt: 'Herbal nutrition preparation',                      category: 'Food & Nutrition', span: 'col-span-1' },
   { src: '/images/weight-management.jpg',     alt: 'Exercise and nutrition session',                    category: 'Exercise',         span: 'col-span-1' },
 ]
@@ -101,10 +101,10 @@ export default function GalleryPage() {
                 Our Gallery
               </span>
               <h1 className="font-serif text-4xl md:text-5xl font-bold mb-3">
-                Wellness in Action
+                Client Transformations & Success Stories
               </h1>
               <p className="text-background/70 text-lg max-w-xl leading-relaxed">
-                Photos and videos from our wellness center, coaching sessions, exercise programs, and client transformation journeys.
+               See real client transformations through personalized diet plans for weight loss, weight gain, PCOD, thyroid, diabetes, and healthy lifestyle changes. Every success story reflects dedication, expert guidance, and sustainable results.
               </p>
             </div>
             <div className="flex gap-3 shrink-0">
@@ -159,10 +159,10 @@ export default function GalleryPage() {
           >
             <span className="text-primary font-semibold text-sm uppercase tracking-widest">Photo Gallery</span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mt-3 mb-4">
-              Inside Our Wellness Center
+               Weight Loss Transformations
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              A glimpse into our Thergaon wellness center, coaching sessions, and client transformations.
+             View real weight loss, weight gain, and healthy lifestyle transformation stories from our clients in Thergaon and Pimpri-Chinchwad.
             </p>
           </motion.div>
 
@@ -261,10 +261,10 @@ export default function GalleryPage() {
           >
             <span className="text-primary font-semibold text-sm uppercase tracking-widest">Exercise Programs</span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mt-3 mb-4">
-              Workout & Wellness Videos
+             Video Testimonials From Our Clients
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Guided home workouts, strength training, and movement sessions from our certified coaches.
+              Watch real client success stories, exercise sessions, and expert nutrition guidance from Charming Aura Wellness.
             </p>
           </motion.div>
 
@@ -293,10 +293,10 @@ export default function GalleryPage() {
           >
             <span className="text-primary font-semibold text-sm uppercase tracking-widest">Live Zoom Sessions</span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mt-3 mb-4">
-              Coaching & Consultation Videos
+              PCOD & Thyroid Journeys
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Recordings from our live Zoom coaching sessions — morning, afternoon, and evening sessions available daily.
+             Watch real client journeys, personalized diet consultations, and health improvement stories for PCOD, thyroid, and overall wellness.
             </p>
           </motion.div>
 
@@ -370,7 +370,7 @@ export default function GalleryPage() {
               Charming Aura on YouTube
             </h2>
             <p className="text-background/70 text-lg max-w-2xl mx-auto">
-              Subscribe to our channel for weekly nutrition tips, wellness guidance, herbal recipes, client transformations, and live session recordings.
+             Subscribe to our YouTube channel for weight loss tips, healthy Indian diet plans, client transformation stories, PCOD guidance, and wellness videos.
             </p>
           </motion.div>
 
@@ -492,10 +492,10 @@ export default function GalleryPage() {
       <section className="py-14 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-serif text-2xl md:text-3xl font-bold mb-3">
-            Ready to Start Your Own Transformation?
+           Start Your Own Health Transformation Today
           </h2>
           <p className="text-primary-foreground/80 mb-6 max-w-xl mx-auto">
-            Join {businessInfo.transformedClients} clients who changed their health with our personalised nutrition plans and daily live coaching.
+           Join thousands of happy clients who improved their health with personalized diet plans, expert guidance, and daily wellness coaching.
           </p>
           <Link
             href="/contact"

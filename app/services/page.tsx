@@ -12,7 +12,7 @@ const services = [
   {
     icon: Salad,
     title: "Personalized Diet Plans",
-    description: "Custom nutrition plans tailored to your unique body type, lifestyle, health goals, and food preferences. Our plans are designed for sustainability and long-term success.",
+    description: "Personalized diet plans for weight loss, weight gain, PCOD, thyroid, diabetes, and healthy living. Every plan is customized based on your health goals and lifestyle.",
     image: "/images/diet-plan.jpg",
     href: "/services",
     features: [
@@ -25,8 +25,8 @@ const services = [
   },
   {
     icon: Scale,
-    title: "Weight Loss Program",
-    description: "Achieve and maintain your ideal weight with science-backed strategies. Whether you want to lose weight, gain muscle, or maintain a healthy weight, we have solutions for you.",
+    title: "Weight Loss Diet Plans",
+    description:"Healthy weight loss diet plans with personalized Indian meal plans, expert guidance, and long-term lifestyle changes for sustainable results.",
     image: "/images/weight-management.jpg",
     href: "/services/weight-loss",
     features: [
@@ -39,8 +39,8 @@ const services = [
   },
   {
     icon: TrendingUp,
-    title: "Weight Gain Program",
-    description: "Gain healthy weight with personalized calorie planning, protein guidance, appetite support, and sustainable food routines.",
+    title: "Healthy Weight Gain Programs",
+    description: "Healthy weight gain programs with balanced nutrition, protein-rich meal plans, and personalized guidance to build strength and improve overall health.",
     image: "/images/diet-plan.jpg",
     href: "/services/weight-gain",
     features: [
@@ -54,7 +54,7 @@ const services = [
   {
     icon: Heart,
     title: "Wellness Coaching",
-    description: "Holistic guidance that addresses mind, body, and spirit. Our wellness coaching goes beyond diet to encompass all aspects of your health and well-being.",
+    description: "Wellness coaching to improve your eating habits, lifestyle, stress management, and overall health with expert guidance.",
     image: "/images/wellness-coaching.jpg",
     href: "/services",
     features: [
@@ -68,7 +68,7 @@ const services = [
   {
     icon: Sparkles,
     title: "Lifestyle Modification",
-    description: "Transform your daily habits with sustainable lifestyle changes. We help you build healthy routines that fit seamlessly into your busy life.",
+    description: "Build healthy daily habits with personalized lifestyle changes that support long-term fitness, nutrition, and overall wellness.",
     image: "/images/wellness-coaching.jpg",
     href: "/services",
     features: [
@@ -81,8 +81,8 @@ const services = [
   },
   {
     icon: Apple,
-    title: "Disease Management",
-    description: "Specialized nutrition plans for managing chronic conditions like diabetes, hypertension, thyroid disorders, and PCOS through dietary intervention.",
+    title:  "PCOD, Thyroid & Diabetes Diet Management",
+    description: "Personalized diet plans for PCOD, thyroid, diabetes, hypertension, and other health conditions to support better health through nutrition.",
     image: "/images/diet-plan.jpg",
     href: "/services/pcod-management",
     features: [
@@ -96,21 +96,16 @@ const services = [
   {
     icon: Dumbbell,
     title: "Sports Nutrition",
-    description: "Optimize your athletic performance with tailored nutrition strategies. Perfect for athletes, fitness enthusiasts, and anyone with active lifestyle goals.",
-    image: "/images/weight-management.jpg",
-    href: "/services",
-    features: [
-      "Performance optimization",
-      "Pre/post workout nutrition",
-      "Supplement guidance",
-      "Recovery nutrition",
-      "Competition preparation",
+    description: "Sports nutrition plans for athletes and fitness enthusiasts to improve performance, recovery, muscle growth, and energy levels.",
+     image: "/images/weight-management.jpg",
+    href: "/services/sports-nutrition",
+    features: [ "Performance optimization", "Pre/post workout nutrition", "Supplement guidance", "Recovery nutrition","Competition preparation",
     ],
   },
   {
     icon: CalendarDays,
     title: "21-Day Wellness Challenge",
-    description: "A structured three-week reset with detox guidance, liquid day support, Zoom coaching, and follow-ups.",
+    description: "Join our 21-Day Wellness Challenge with personalized diet plans, detox guidance, Zoom coaching, and daily support for healthy lifestyle changes.",
     image: "/images/wellness-coaching.jpg",
     href: "/programs/21-day-challenge",
     features: [
@@ -126,23 +121,23 @@ const services = [
 const process = [
   {
     step: "01",
-    title: "Initial Consultation",
-    description: "We start with a comprehensive assessment of your health history, lifestyle, goals, and preferences.",
+    title: "Initial Diet Consultation",
+    description:  "We understand your health condition, food habits, lifestyle, and health goals before creating your personalized diet plan."
   },
   {
     step: "02",
-    title: "Personalized Plan",
-    description: "Based on your assessment, we create a customized nutrition and wellness plan just for you.",
+    title:  "Personalized Diet Plan",
+    description:  "We create a personalized Indian diet plan based on your health goals and daily routine.",
   },
   {
     step: "03",
-    title: "Implementation",
-    description: "We guide you through implementing your plan with practical tips, recipes, and ongoing support.",
+    title: "Start Your Nutrition Journey",
+    description:  "Start your customized diet plan with expert guidance, healthy meal suggestions, and continuous support.",
   },
   {
     step: "04",
-    title: "Monitor & Adjust",
-    description: "Regular check-ins to track your progress and adjust your plan for optimal results.",
+    title:  "Progress Review & Follow-up",
+    description:  "We regularly review your progress and update your diet plan for better long-term health results.",
   },
 ]
 
@@ -171,12 +166,12 @@ export default function ServicesPage() {
             transition={{ duration: 0.5 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <span className="text-primary font-medium text-sm uppercase tracking-wider">Our Services</span>
+            <span className="text-primary font-medium text-sm uppercase tracking-wider">Diet & Nutrition Services</span>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mt-4 mb-6 text-balance">
-              Premium Wellness Services for Your Health Goals
+             Diet & Nutrition Services in Thergaon, Pimpri-Chinchwad
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Expert-guided nutrition plans, personalized wellness coaching, and specialized programs tailored to your unique needs. Transform your health with Charming Aura.
+              We provide personalized diet consultation and nutrition services in Thergaon and Pimpri-Chinchwad. Our experts help with weight loss, weight gain, PCOD, thyroid, diabetes, gut health and sports nutrition using customized Indian diet plans.
             </p>
           </motion.div>
         </div>
@@ -235,7 +230,7 @@ export default function ServicesPage() {
                           href={service.href}
                           className="inline-flex items-center gap-2 text-sm font-semibold text-primary mt-5 hover:gap-3 transition-all"
                         >
-                          Learn more
+                          View Service
                           <ArrowRight className="w-4 h-4" />
                         </Link>
                       </div>
@@ -260,10 +255,10 @@ export default function ServicesPage() {
           >
             <span className="text-primary font-medium text-sm uppercase tracking-wider">Our Process</span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
-              How We Work With You
+              Our Diet Consultation Process
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Our proven four-step process ensures you get personalized care and achieve lasting results.
+             Our simple four-step diet consultation process helps you achieve your health goals with personalized nutrition guidance.
             </p>
           </motion.div>
 
@@ -310,11 +305,11 @@ export default function ServicesPage() {
           >
             <span className="text-primary font-medium text-sm uppercase tracking-wider">Pricing</span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
-              Flexible Plans for Every Need
+              Diet Consultation Fees — First Session FREE
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              We offer customized packages based on your specific needs and goals. 
-              Contact us for a personalized quote.
+              Choose the right diet consultation plan based on your health goals.
+              Book a FREE consultation to get a personalized diet plan and pricing details.
             </p>
           </motion.div>
 
@@ -328,19 +323,19 @@ export default function ServicesPage() {
             {[
               {
                 name: "Basic",
-                description: "Perfect for getting started",
-                features: ["Initial consultation", "Basic diet plan", "Email support", "Monthly check-in"],
+                description:  "Best for your first diet consultation",
+                features: [ "Initial diet consultation", "Personalized diet plan", "Email support", "One follow-up session"],
               },
               {
                 name: "Standard",
-                description: "Most popular choice",
-                features: ["Everything in Basic", "Detailed meal plans", "Weekly check-ins", "Recipe suggestions", "Progress tracking"],
+                description:  "Most popular personalized diet plan",
+                features: ["Everything in Basic","Detailed personalized meal plan","Weekly follow-up","Healthy recipe suggestions","Progress tracking"],
                 featured: true,
               },
               {
                 name: "Premium",
-                description: "Complete transformation",
-                features: ["Everything in Standard", "Unlimited support", "Bi-weekly consultations", "Lifestyle coaching", "Family nutrition"],
+                description: "Complete health and lifestyle transformation",
+                features: ["Everything in Standard", "Unlimited support", "Regular consultations", "Lifestyle coaching", "Family nutrition guidance"],
               },
             ].map((plan) => (
               <Card
@@ -369,7 +364,7 @@ export default function ServicesPage() {
                     asChild
                     className={`w-full ${plan.featured ? "bg-primary hover:bg-primary/90" : "bg-secondary hover:bg-secondary/80"}`}
                   >
-                    <Link href="/contact">Get Started</Link>
+                    <Link href="/contact">Book Now</Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -385,7 +380,7 @@ export default function ServicesPage() {
           >
             <Button asChild size="lg" variant="outline" className="border-primary/30 hover:bg-primary hover:text-primary-foreground group">
               <Link href="/contact">
-                Contact for Custom Pricing
+               Book a FREE Consultation
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
