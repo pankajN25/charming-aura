@@ -37,15 +37,15 @@ const values = [
 
 const team = [
   {
-    name: "Dr. Priya Sharma",
+    name: "Poonam Yadav",
     role: "Lead Nutritionist",
-    image: "/images/team-member-1.jpg",
+    image: "/images/poonam-yadav.jpg",
     bio: "With over 10 years of experience in clinical nutrition, Dr. Sharma specializes in personalized diet plans and metabolic health.",
   },
   {
-    name: "Rahul Verma",
+    name: "Manoj Kumar Yadav",
     role: "Wellness Coach",
-    image: "/images/team-member-2.jpg",
+    image: "/images/manoj-yadav.jpg",
     bio: "A certified wellness coach with expertise in lifestyle modification and holistic health approaches.",
   },
 ]
@@ -100,7 +100,7 @@ export default function AboutPage() {
             >
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/mission.jpg"
+                  src="/images/our-story.jpg"
                   alt="Our Mission"
                   fill
                   className="object-cover"
