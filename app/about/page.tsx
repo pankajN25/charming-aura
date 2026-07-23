@@ -53,13 +53,13 @@ const values = [
 
 const team = [
   {
-    name: "Dr. Priya Sharma",
+    name: "poonam-yadav",
     role: "Lead Nutritionist",
     image: "/images/poonam-yadav.jpg",
     bio: "With over 10 years of experience in clinical nutrition, Dr. Sharma specializes in personalized diet plans and metabolic health.",
   },
   {
-    name: "Rahul Verma",
+    name: "manoj-yadav",
     role: "Wellness Coach",
     image: "/images/manoj-yadav.jpg",
     bio: "A certified wellness coach with expertise in lifestyle modification and holistic health approaches.",
