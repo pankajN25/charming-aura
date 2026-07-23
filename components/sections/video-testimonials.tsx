@@ -33,7 +33,7 @@ const testimonials = [
     role: "Diabetes Management",
     location: "Pimpri-Chinchwad",
     content:
-      "After struggling with my blood sugar levels for years, the wellness coaching here helped me get everything under control. My doctor is amazed at my progress!",
+      "After years of inconsistent eating habits, the wellness coaching here helped me build a routine that finally works. I feel more energetic than I have in years!",
     rating: 5,
     tag: "Diabetes",
     tagColor: "bg-blue-100 text-blue-700",

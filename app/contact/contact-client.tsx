@@ -3,7 +3,6 @@
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { InquiryForm } from "@/components/inquiry-form"
-import { BookingWidget } from "@/components/booking-widget"
 import { businessInfo } from "@/lib/business-info"
 import {
   Phone,
@@ -283,23 +282,6 @@ export function ContactClient() {
               </div>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* Quick Booking Section */}
-      <section className="py-16 px-6 bg-primary/5">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="font-serif text-3xl font-bold text-foreground mb-12 text-center">
-              Schedule Your Free Consultation
-            </h2>
-            <BookingWidget />
-          </motion.div>
         </div>
       </section>
 

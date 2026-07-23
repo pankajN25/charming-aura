@@ -122,6 +122,19 @@ export function Footer() {
         </div>
       </div>
 
+      {/* Wellness Disclaimer */}
+      <div className="border-t border-background/10">
+        <div className="max-w-7xl mx-auto px-4 py-5">
+          <p className="text-xs text-background/50 leading-relaxed text-center max-w-4xl mx-auto">
+            <span className="font-semibold text-background/70">Disclaimer:</span> Charming Aura Wellness is a wellness
+            and nutrition centre. We provide diet plans, nutrition guidance and lifestyle coaching only. We do not
+            provide medical diagnosis, treatment, or prescriptions. Our guidance supports — but does not replace —
+            advice from your doctor or a qualified medical professional. Please consult your physician before making
+            changes to your diet, especially if you have an existing health condition or take medication.
+          </p>
+        </div>
+      </div>
+
       {/* Bottom Bar */}
       <div className="border-t border-background/10">
         <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-background/60">

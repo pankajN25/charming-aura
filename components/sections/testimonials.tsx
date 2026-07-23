@@ -14,7 +14,7 @@ const testimonials = [
   {
     name: "Rahul Mehta",
     role: "Diabetes Management",
-    content: "After struggling with my blood sugar levels for years, the wellness coaching here helped me get everything under control. My doctor is amazed at my progress!",
+    content: "After years of inconsistent eating habits, the wellness coaching here helped me build a routine that finally works. I feel more energetic than I have in years!",
     rating: 5,
   },
   {
@@ -54,8 +54,8 @@ export function TestimonialsSection() {
   return (
     <section className="py-24 bg-secondary/30 relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/testimonial-bg.jpg')] bg-cover bg-center" />
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary via-transparent to-primary" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4">

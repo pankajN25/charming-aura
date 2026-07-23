@@ -74,7 +74,7 @@ export default function BlogArticlePage() {
 
             <h3 className="font-serif text-xl font-bold mt-6 mb-3">5. Amla (Indian Gooseberry) — The Metabolic Booster</h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Amla is exceptionally rich in Vitamin C (20x more than an orange) and chromium, which improves insulin sensitivity. Daily amla consumption has been linked to significant reductions in fasting blood sugar and body fat percentage in clinical studies.
+              Amla is exceptionally rich in Vitamin C (20x more than an orange) and chromium. It is a popular traditional addition to Indian diets and is commonly included as part of a balanced weight-management routine.
             </p>
 
             <h3 className="font-serif text-xl font-bold mt-6 mb-3">6. Moringa — The Nutrient Density Champion</h3>

@@ -24,22 +24,16 @@ const credentials = [
 
 const teamMembers = [
   {
-    name: 'Dr. Priya Sharma',
-    role: 'Chief Nutritionist & Founder',
-    credentials: 'M.Sc. Nutrition, RD, CSSD',
-    bio: '15+ years of experience in clinical nutrition and wellness coaching. Specialized in weight management and PCOD nutrition.',
+    name: 'Dt. Poonam Yadav',
+    role: 'Lead Nutritionist & Founder',
+    credentials: 'M.Sc. Nutrition & Dietetics',
+    bio: '10+ years of experience in nutrition and wellness coaching. Specialised in weight management and PCOD nutrition support.',
   },
   {
-    name: 'Raj Kumar',
-    role: 'Senior Nutrition Coach',
-    credentials: 'M.Sc. Dietetics, Certified Health Coach',
-    bio: 'Expert in sports nutrition and fitness integration. Has coached 200+ clients to achieve fitness goals.',
-  },
-  {
-    name: 'Dr. Neha Patel',
+    name: 'Manoj Yadav',
     role: 'Wellness Coach',
-    credentials: 'B.Sc. Nutrition, ISSA Certified',
-    bio: 'Specializes in lifestyle modification and sustainable habit formation for long-term health.',
+    credentials: 'Certified Wellness & Lifestyle Coach',
+    bio: 'Specialises in lifestyle modification, habit building and sustainable long-term wellness routines.',
   },
 ]
 
@@ -77,7 +71,7 @@ export function TeamCredentialsSection() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {teamMembers.map((member, index) => (
               <div
                 key={index}

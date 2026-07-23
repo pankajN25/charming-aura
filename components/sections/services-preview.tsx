@@ -63,7 +63,7 @@ const specialtyServices = [
   {
     icon: Sparkles,
     title: "Gut Health",
-    description: "Heal bloating, IBS, and acid reflux with targeted gut-reset nutrition protocols.",
+    description: "Support digestion and reduce bloating with a targeted gut-friendly nutrition plan.",
     image: "/images/wellness-coaching.jpg",
     href: "/services/gut-health",
     tag: "Digestive Wellness",

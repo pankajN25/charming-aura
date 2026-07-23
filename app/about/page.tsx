@@ -17,6 +17,9 @@ import {
 } from "lucide-react";
 import { CTASection } from "@/components/sections/cta";
 import { TeamCredentialsSection } from "@/components/sections/team-credentials";
+import { MethodologySection } from "@/components/sections/methodology";
+import { CaseStudiesSection } from "@/components/sections/case-studies";
+import { VideoTestimonialsSection } from "@/components/sections/video-testimonials";
 import { businessInfo } from "@/lib/business-info";
 
 const stats = [
@@ -53,13 +56,13 @@ const values = [
 
 const team = [
   {
-    name: "Dr. Priya Sharma",
+    name: "Dt. Poonam Yadav",
     role: "Lead Nutritionist",
     image: "/images/poonam-yadav.jpg",
-    bio: "With over 10 years of experience in clinical nutrition, Dr. Sharma specializes in personalized diet plans and metabolic health.",
+    bio: "With over 10 years of experience in nutrition and dietetics, Poonam specialises in personalised diet plans and everyday metabolic wellness.",
   },
   {
-    name: "Rahul Verma",
+    name: "Manoj Yadav",
     role: "Wellness Coach",
     image: "/images/manoj-yadav.jpg",
     bio: "A certified wellness coach with expertise in lifestyle modification and holistic health approaches.",
@@ -162,17 +165,17 @@ export default function AboutPage() {
                 sustainable, and tailored to every individual's lifestyle. We
                 believe that no two people are alike, which is why every diet
                 plan is carefully designed to meet unique health goals and
-                medical requirements.
+                individual dietary requirements.
               </p>
 
               <p className="text-muted-foreground leading-relaxed">
                 Today, Charming Aura Wellness is a trusted diet and nutrition
                 clinic serving Thergaon, Pimpri-Chinchwad, and nearby areas. Our
-                experienced nutrition experts specialize in weight management,
-                PCOD, thyroid care, diabetes management, gut health, sports
+                experienced nutrition experts offer diet guidance for weight
+                management, PCOD, thyroid, blood sugar, gut health, sports
                 nutrition, and holistic wellness, helping clients achieve
                 healthier and happier lives through evidence-based nutrition
-                guidance.
+                guidance that complements their doctor&apos;s advice.
               </p>
             </motion.div>
           </div>
@@ -391,9 +394,10 @@ export default function AboutPage() {
       </section>
 
       <TeamCredentialsSection />
+      <MethodologySection />
+      <CaseStudiesSection />
+      <VideoTestimonialsSection />
       <CTASection />
-
-      {/* <CTASection /> */}
     </>
   );
 }

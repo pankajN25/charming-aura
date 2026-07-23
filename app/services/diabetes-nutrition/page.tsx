@@ -81,9 +81,9 @@ export default function DiabetesNutritionPage() {
           <h2 className="font-serif text-3xl font-bold text-foreground mb-12 text-center">Your 3-Month Glucose Control Journey</h2>
           <div className="space-y-6">
             {[
-              { phase: 'Week 1–2', title: 'Assessment & Baseline', points: ['Review blood reports and current diet', 'Set personalised glucose target ranges', 'Begin low-GI meal plan', 'Remove high-spike trigger foods'] },
+              { phase: 'Week 1–2', title: 'Assessment & Baseline', points: ['Understand your current eating pattern', 'Set realistic personal wellness goals', 'Begin low-GI meal plan', 'Reduce high-spike trigger foods'] },
               { phase: 'Week 3–8', title: 'Glucose Stabilisation', points: ['Fasting and post-meal glucose improving', 'Energy crashes significantly reduced', 'Cravings for refined carbs diminishing', 'Weight beginning to normalise'] },
-              { phase: 'Month 2–3', title: 'Sustained Control', points: ['HbA1c reduction measurable in labs', 'Consistent energy throughout the day', 'Reduced reliance on medication (with doctor\'s guidance)', 'Lifestyle habits locked in for the long term'] },
+              { phase: 'Month 2–3', title: 'Sustained Habits', points: ['Balanced everyday eating routine', 'Consistent energy throughout the day', 'Better portion and carb awareness', 'Lifestyle habits locked in for the long term'] },
             ].map((phase, i) => (
               <motion.div key={i} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="border-l-4 border-primary pl-6 py-4">
                 <Badge className="mb-2 bg-primary/10 text-primary border-primary/20">{phase.phase}</Badge>

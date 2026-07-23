@@ -3,7 +3,7 @@ import { businessInfo } from './business-info';
 
 export const businessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'MedicalBusiness',
+  '@type': ['LocalBusiness', 'HealthAndBeautyBusiness'],
   '@id': businessInfo.website,
   name: businessInfo.name,
   description: businessInfo.shortPromise,
@@ -74,7 +74,7 @@ export const businessSchema = {
 
 export const localBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': ['LocalBusiness', 'MedicalBusiness', 'Dietitian'],
+  '@type': ['LocalBusiness', 'HealthAndBeautyBusiness'],
   '@id': `${businessInfo.website}/#localbusiness`,
   name: businessInfo.name,
   image: 'https://charmingaurawellness.com/images/hero-wellness.jpg',
@@ -249,7 +249,7 @@ export const contactPageSchema = {
   description: `Contact ${businessInfo.legalName} in Thergaon, Pimpri-Chinchwad. Book a free diet consultation in person or online.`,
   url: `${businessInfo.website}/contact`,
   mainEntity: {
-    '@type': 'MedicalBusiness',
+    '@type': 'LocalBusiness',
     '@id': `${businessInfo.website}/#localbusiness`,
     name: businessInfo.name,
     telephone: businessInfo.phoneDisplay,

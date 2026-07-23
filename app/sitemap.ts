@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next'
 import { businessInfo } from '@/lib/business-info'
 
+export const dynamic = 'force-static'
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = businessInfo.website
 

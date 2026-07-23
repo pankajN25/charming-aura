@@ -7,6 +7,10 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ArrowRight, CalendarDays, Check, Salad, Scale, Heart, Sparkles, Apple, Dumbbell, TrendingUp } from "lucide-react"
 import { CTASection } from "@/components/sections/cta"
+import { ZoomSessionsSection } from "@/components/sections/zoom-sessions"
+import { ExerciseProgramsSection } from "@/components/sections/exercise-programs"
+import { GuaranteeSection } from "@/components/sections/guarantee"
+import { AreasServedSection } from "@/components/sections/areas-served"
 
 const services = [
   {
@@ -86,11 +90,11 @@ const services = [
     image: "/images/diet-plan.jpg",
     href: "/services/pcod-management",
     features: [
-      "Condition-specific plans",
-      "Blood sugar management",
+      "Condition-specific diet plans",
+      "Blood sugar friendly meals",
       "Heart-healthy nutrition",
       "Hormonal balance support",
-      "Medical coordination",
+      "Works alongside your doctor",
     ],
   },
   {
@@ -388,6 +392,10 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      <ZoomSessionsSection />
+      <ExerciseProgramsSection />
+      <GuaranteeSection />
+      <AreasServedSection />
       <CTASection />
     </>
   )
