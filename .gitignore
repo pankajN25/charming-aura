@@ -8,3 +8,13 @@ node_modules
 .next/
 .env*.local
 .DS_Store
+
+# Build output (never commit — regenerate with `npm run build`)
+/out/
+out.zip
+*.tsbuildinfo
+
+# Logs
+*.log
+dev-server.err.log
+dev-server.out.log
